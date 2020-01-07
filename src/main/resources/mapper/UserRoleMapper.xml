@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.springbootmybatis.generator.dao.UserRoleMapper" >
+  <resultMap id="BaseResultMap" type="com.example.springbootmybatis.generator.entity.UserRole" >
+    <result column="userId" property="userid" jdbcType="INTEGER" />
+    <result column="roleId" property="roleid" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.springbootmybatis.generator.entity.UserRole" >
+    insert into user_role (userId, roleId)
+    values (#{userid,jdbcType=INTEGER}, #{roleid,jdbcType=INTEGER})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select userId, roleId
+    from user_role
+  </select>
+</mapper>
